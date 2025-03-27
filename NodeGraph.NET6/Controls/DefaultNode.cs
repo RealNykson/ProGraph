@@ -196,7 +196,7 @@ namespace NodeGraph.NET6.Controls
       DefaultStyleKeyProperty.OverrideMetadata(typeof(DefaultNode), new FrameworkPropertyMetadata(typeof(DefaultNode)));
     }
 
-    internal DefaultNode(Canvas canvas, Point offset, double scale) : base(canvas, offset)
+    public DefaultNode(Canvas canvas, Point offset, double scale) : base(canvas, offset)
     {
       SizeChanged += Node_SizeChanged;
       AddOutputCommand = new RoutedCommand();
@@ -222,16 +222,19 @@ namespace NodeGraph.NET6.Controls
       Outputs = newOutputs;
 
       //// Find parent NodeGraph and call newOutput
-      //var nodeGraph = VisualTreeHelper.GetParent(this);
-      //while (nodeGraph != null && !(nodeGraph is NodeGraph))
-      //{
-      //  nodeGraph = VisualTreeHelper.GetParent(nodeGraph);
-      //}
+      var nodeGraph = VisualTreeHelper.GetParent(this);
+      while (nodeGraph != null && !(nodeGraph is NodeGraph))
+      {
+        nodeGraph = VisualTreeHelper.GetParent(nodeGraph);
+      }
 
-      //if (nodeGraph is NodeGraph graph)
-      //{
-      //  //graph.newOutput(this, newOutput);
-      //}
+      if (nodeGraph is NodeGraph graph)
+      {
+       // graph.newOutput(Outputs, Outputs);
+      }
+      
+      
+      
     } 
 
     public override void OnApplyTemplate()

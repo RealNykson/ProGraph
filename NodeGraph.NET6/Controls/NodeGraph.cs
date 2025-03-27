@@ -460,6 +460,9 @@ namespace NodeGraph.NET6.Controls
       }
     }
 
+    public void newOutput()
+    {
+    }
     protected override void OnKeyUp(KeyEventArgs e)
     {
       base.OnKeyUp(e);

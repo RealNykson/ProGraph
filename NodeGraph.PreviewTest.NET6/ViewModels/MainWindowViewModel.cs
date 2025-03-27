@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using NodeGraph.NET6.Controls;
+using System.Windows.Controls;
 
 namespace NodeGraph.PreviewTest.ViewModels
 {
@@ -96,6 +97,7 @@ namespace NodeGraph.PreviewTest.ViewModels
 
 
 
+    public ObservableCollection<DefaultNode> NodeViewModels2 = new ObservableCollection<DefaultNode>();
 
     public IEnumerable<DefaultNodeViewModel> NodeViewModels => _NodeViewModels;
     ObservableCollection<DefaultNodeViewModel> _NodeViewModels = new ObservableCollection<DefaultNodeViewModel>();
@@ -154,7 +156,8 @@ namespace NodeGraph.PreviewTest.ViewModels
     public MainWindowViewModel()
     {
       //_GroupNodeViewModels.Add(new GroupNodeViewModel() { Name = "Group1" });
-
+      Canvas canvas = new Canvas();
+      NodeViewModels2.Add(new DefaultNode(canvas, new Point(10, 10), 1));
       _NodeViewModels.Add(new Test1DefaultNodeViewModel() { Name = "Node1", Body = "Content1", Position = new Point(0, 100) });
       _NodeViewModels.Add(new Test3DefaultNodeViewModel() { Name = "Node2", Body = "Content2", Position = new Point(100, 200) });
       //_NodeViewModels.Add(new Test1DefaultNodeViewModel() { Name = "Node3", Body = "Content3", Position = new Point(200, 300) });

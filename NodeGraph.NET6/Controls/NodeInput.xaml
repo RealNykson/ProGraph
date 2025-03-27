@@ -83,7 +83,7 @@
             </DockPanel>
         </Border>
 
-        <ControlTemplate.Triggers>
+        <!--<ControlTemplate.Triggers>
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
                     <Condition Binding="{Binding IsMouseOver, ElementName=__InputConnector__}" Value="True" />
@@ -91,7 +91,7 @@
                 </MultiDataTrigger.Conditions>
                 <Setter TargetName="ConnectorShape1" Property="Fill" Value="Green" />
             </MultiDataTrigger>
-        </ControlTemplate.Triggers>
+        </ControlTemplate.Triggers>-->
     </ControlTemplate>
 
     <Style TargetType="{x:Type local:NodeInput}">
