@@ -48,7 +48,7 @@ namespace NodeGraph.NET6.Controls
         public override void UpdateLinkPosition(Canvas canvas)
         {
             var transformer = _ConnectorControl.TransformToVisual(canvas);
-            var posOnCanvas = transformer.Transform(new Point(0, _ConnectorControl.ActualHeight * 0.5));
+            var posOnCanvas = transformer.Transform(new Point(_ConnectorControl.ActualWidth * 0.5, _ConnectorControl.ActualHeight * 0.5));
 
             foreach (var nodeLink in NodeLinks)
             {

@@ -6,12 +6,12 @@
         <Setter Property="Fill" Value="#22CCCCCC"/>
         <Setter Property="Stroke" Value="LightGray"/>
         <Setter Property="StrokeThickness" Value="1"/>
-        <Style.Triggers>
+        <!--<Style.Triggers>
             <Trigger Property="IsIntersects" Value="True">
                 <Setter Property="Fill" Value="#5500DD00"/>
                 <Setter Property="Stroke" Value="Aqua"/>
             </Trigger>
-        </Style.Triggers>
+        </Style.Triggers>-->
     </Style>
     
 </ResourceDictionary>

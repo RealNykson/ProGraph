@@ -90,52 +90,52 @@ namespace NodeGraph.NET6.Controls
 
         void OnRenderHorizontal(DrawingContext dc)
         {
-            double s = Math.Max(Scale, 1);
-            double numScale = Math.Max(1.0 / Scale, 1);
+            //double s = Math.Max(Scale, 1);
+            //double numScale = Math.Max(1.0 / Scale, 1);
 
-            int init = (int)(-Offset.X / LineDistance) - 1;
-            int count = (int)((-Offset.X + ActualWidth) / LineDistance) + 1;
-            for (int i = init; i < count; ++i)
-            {
-                double num = i * LineDistance;
-                double x = (num + Offset.X) * s;
-                dc.DrawLine(_Pen, new Point(x, LineOffset), new Point(x, LineLength));
+            //int init = (int)(-Offset.X / LineDistance) - 1;
+            //int count = (int)((-Offset.X + ActualWidth) / LineDistance) + 1;
+            //for (int i = init; i < count; ++i)
+            //{
+            //    double num = i * LineDistance;
+            //    double x = (num + Offset.X) * s;
+            //    dc.DrawLine(_Pen, new Point(x, LineOffset), new Point(x, LineLength));
 
-                for (int j = 1; j < 10; ++j)
-                {
-                    double sub_x = x + j * SubLineDistance * s;
-                    dc.DrawLine(_Pen, new Point(sub_x, SubLineOffset), new Point(sub_x, SubLineLength));
-                }
+            //    for (int j = 1; j < 10; ++j)
+            //    {
+            //        double sub_x = x + j * SubLineDistance * s;
+            //        dc.DrawLine(_Pen, new Point(sub_x, SubLineOffset), new Point(sub_x, SubLineLength));
+            //    }
 
-                int numText = (int)(num * numScale);
-                var text = new FormattedText($"{numText}", CultureInfo.CurrentCulture, FlowDirection.LeftToRight, Typeface, 8, Color, 1.0);
-                dc.DrawText(text, new Point(x - text.Width * 0.5, LineLength));
-            }
+            //    int numText = (int)(num * numScale);
+            //    var text = new FormattedText($"{numText}", CultureInfo.CurrentCulture, FlowDirection.LeftToRight, Typeface, 8, Color, 1.0);
+            //    dc.DrawText(text, new Point(x - text.Width * 0.5, LineLength));
+            //}
         }
 
         void OnRenderVertical(DrawingContext dc)
         {
-            double s = Math.Max(Scale, 1);
-            double numScale = Math.Max(1.0 / Scale, 1);
+            //double s = Math.Max(Scale, 1);
+            //double numScale = Math.Max(1.0 / Scale, 1);
 
-            int init = (int)(-Offset.Y / LineDistance) - 1;
-            int count = (int)((-Offset.Y + ActualHeight) / LineDistance) + 1;
-            for (int i = init; i < count; ++i)
-            {
-                double num = i * LineDistance;
-                double y = (num + Offset.Y) * s;
-                dc.DrawLine(_Pen, new Point(LineOffset, y), new Point(LineLength, y));
+            //int init = (int)(-Offset.Y / LineDistance) - 1;
+            //int count = (int)((-Offset.Y + ActualHeight) / LineDistance) + 1;
+            //for (int i = init; i < count; ++i)
+            //{
+            //    double num = i * LineDistance;
+            //    double y = (num + Offset.Y) * s;
+            //    dc.DrawLine(_Pen, new Point(LineOffset, y), new Point(LineLength, y));
 
-                for (int j = 1; j < 10; ++j)
-                {
-                    double sub_y = y + j * SubLineDistance * s;
-                    dc.DrawLine(_Pen, new Point(SubLineOffset, sub_y), new Point(SubLineLength, sub_y));
-                }
+            //    for (int j = 1; j < 10; ++j)
+            //    {
+            //        double sub_y = y + j * SubLineDistance * s;
+            //        dc.DrawLine(_Pen, new Point(SubLineOffset, sub_y), new Point(SubLineLength, sub_y));
+            //    }
 
-                int numText = (int)(num * numScale);
-                var text = new FormattedText($"{numText}", CultureInfo.CurrentCulture, FlowDirection.LeftToRight, Typeface, 8, Color, 1.0);
-                dc.DrawText(text, new Point(LineLength + LineOffset, y - text.Height * 0.5));
-            }
+            //    int numText = (int)(num * numScale);
+            //    var text = new FormattedText($"{numText}", CultureInfo.CurrentCulture, FlowDirection.LeftToRight, Typeface, 8, Color, 1.0);
+            //    dc.DrawText(text, new Point(LineLength + LineOffset, y - text.Height * 0.5));
+            //}
         }
 
         void UpdatePen()

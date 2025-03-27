@@ -166,27 +166,24 @@ namespace NodeGraph.PreviewTest.ViewModels
 
         public Test1DefaultNodeViewModel()
         {
-            for (int i = 0; i < 4; ++i)
-            {
-                if (i % 2 == 0)
-                {
-                    var label = $"Input{i}";
-                    if(i > 1)
-                    {
-                        label += " Allow to connect multiple";
-                    }
-                    _Inputs.Add(new NodeInputViewModel(label, i > 1));
-                }
-                else
-                {
-                    _Inputs.Add(new NodeInputViewModel($"Limited Input", false));
-                }
-            }
+            //for (int i = 0; i < 4; ++i)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        var label = $"Input{i}";
+            //        if(i > 1)
+            //        {
+            //            label += " Allow to connect multiple";
+            //        }
+            //        _Inputs.Add(new NodeInputViewModel(label, i > 1));
+            //    }
+            //    else
+            //    {
+            //        _Inputs.Add(new NodeInputViewModel($"Limited Input", false));
+            //    }
+            //}
 
-            for (int i = 0; i < 5; ++i)
-            {
-                _Outputs.Add(new NodeOutputViewModel($"Output{i}"));
-            }
+                _Inputs.Add(new NodeInputViewModel($"Output{1}", true));
         }
 
         public override NodeConnectorViewModel FindConnector(Guid guid)

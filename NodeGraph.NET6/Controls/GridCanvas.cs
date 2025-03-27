@@ -152,39 +152,39 @@ namespace NodeGraph.NET6.Controls
             int vCount = (int)(ActualWidth * invScale / Spacing + Math.Ceiling(Scale)) + 2;
             int initVIndex = (int)(Math.Max(0, ActualWidth * invScale - ActualWidth) / Spacing);
 
-            // sub horizon
-            for (int i = -initHIndex; i < hCount; ++i)
-            {
-                for (int sub = 0; sub < subGridCount; ++sub)
-                {
-                    double hSub = sub * subGridSpace + i * subGridOffset + Offset.Y % subGridSpace;
-                    dc.DrawLine(_GridSubPen, new Point(MinHorizonOnCanvas, hSub), new Point(MaxHorizonOnCanvas, hSub));
-                }
-            }
+            //// sub horizon
+            //for (int i = -initHIndex; i < hCount; ++i)
+            //{
+            //    for (int sub = 0; sub < subGridCount; ++sub)
+            //    {
+            //        double hSub = sub * subGridSpace + i * subGridOffset + Offset.Y % subGridSpace;
+            //        dc.DrawLine(_GridSubPen, new Point(MinHorizonOnCanvas, hSub), new Point(MaxHorizonOnCanvas, hSub));
+            //    }
+            //}
 
-            // sub vertical
-            for (int i = -initVIndex; i < vCount; ++i)
-            {
-                for (uint sub = 0; sub < subGridCount; ++sub)
-                {
-                    double vSub = sub * subGridSpace + i * subGridOffset + Offset.X % subGridSpace;
-                    dc.DrawLine(_GridSubPen, new Point(vSub, MinVerticalOnCanvas), new Point(vSub, MaxVerticalOnCanvas));
-                }
-            }
+            //// sub vertical
+            //for (int i = -initVIndex; i < vCount; ++i)
+            //{
+            //    for (uint sub = 0; sub < subGridCount; ++sub)
+            //    {
+            //        double vSub = sub * subGridSpace + i * subGridOffset + Offset.X % subGridSpace;
+            //        dc.DrawLine(_GridSubPen, new Point(vSub, MinVerticalOnCanvas), new Point(vSub, MaxVerticalOnCanvas));
+            //    }
+            //}
 
-            // main horizontal
-            for (int i = -initHIndex; i < hCount; ++i)
-            {
-                double h = i * Spacing + Offset.Y % Spacing;
-                dc.DrawLine(_GridMainPen, new Point(MinHorizonOnCanvas, h), new Point(MaxHorizonOnCanvas, h));
-            }
+            //// main horizontal
+            //for (int i = -initHIndex; i < hCount; ++i)
+            //{
+            //    double h = i * Spacing + Offset.Y % Spacing;
+            //    dc.DrawLine(_GridMainPen, new Point(MinHorizonOnCanvas, h), new Point(MaxHorizonOnCanvas, h));
+            //}
 
-            // main vertical
-            for (int i = -initVIndex; i < vCount; ++i)
-            {
-                double v = i * Spacing + Offset.X % Spacing;
-                dc.DrawLine(_GridMainPen, new Point(v, MinVerticalOnCanvas), new Point(v, MaxVerticalOnCanvas));
-            }
+            //// main vertical
+            //for (int i = -initVIndex; i < vCount; ++i)
+            //{
+            //    double v = i * Spacing + Offset.X % Spacing;
+            //    dc.DrawLine(_GridMainPen, new Point(v, MinVerticalOnCanvas), new Point(v, MaxVerticalOnCanvas));
+            //}
         }
 
         void UpdateMainGridPen()

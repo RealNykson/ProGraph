@@ -2835,7 +2835,6 @@
                                                 <System:Int32>251</System:Int32>
                                                 <System:Int32>252</System:Int32>
                                                 <System:Int32>253</System:Int32>
-
                                                 <System:Int32>254</System:Int32>
                                                 <System:Int32>255</System:Int32>
                                                 <System:Int32>256</System:Int32>
@@ -2971,26 +2970,26 @@
                                          IsHitTestVisible="False"
                                          Color="Gray" />
                             </Canvas>
-                            <Border Background="#272727" Padding="3" Margin="10" BorderBrush="#3F3F3F" BorderThickness="1" CornerRadius="3" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                                <Border.Style>
-                                    <Style TargetType="Border">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                <StackPanel.Style>
+                                    <Style TargetType="StackPanel">
+
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding SelectedItems.Count, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:NodeGraph}}}" Value="0">
+
+                                            <DataTrigger Binding="{Binding SelectedItems.Count, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:NodeGraph}}" Value="0">
                                                 <DataTrigger.Setters>
                                                     <Setter Property="Visibility" Value="Hidden">
                                                     </Setter>
                                                 </DataTrigger.Setters>
                                             </DataTrigger>
                                         </Style.Triggers>
+
                                     </Style>
-                                </Border.Style>
-                                <StackPanel Orientation="Horizontal">
-                                    <Button BorderBrush="Transparent" Background="Transparent" Width="40" Height="40"></Button>
-                                    <Button BorderBrush="Transparent" Background="Transparent" Width="40" Height="40"></Button>
-                                    <Button BorderBrush="Transparent" Background="Transparent" Width="40" Height="40"></Button>
-                                </StackPanel>
-                            </Border>
-                            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Right" Margin="30" FontSize="20" Foreground="White" Text="{Binding ScalePercent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:NodeGraph}}}"></TextBlock>
+                                </StackPanel.Style>
+                                <Button Width="30" Height="30"></Button>
+                                <Button Width="30" Height="30"></Button>
+                                <Button Width="30" Height="30"></Button>
+                            </StackPanel>
                         </Grid>
                     </Border>
                 </ControlTemplate>

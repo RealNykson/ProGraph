@@ -8,7 +8,7 @@ namespace NodeGraph.NET6.Controls
 {
     public static class ControlSize
     {
-        public const double ConnectorSize = 13;
+        public const double ConnectorSize = 8;
     }
 
     public static class GroupNodeDefault
