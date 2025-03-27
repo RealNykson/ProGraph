@@ -12,6 +12,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Collections.ObjectModel;
 
 namespace NodeGraph.NET6.Controls
 {
@@ -85,6 +86,14 @@ namespace NodeGraph.NET6.Controls
     }
     public static readonly DependencyProperty MinScaleProperty =
         DependencyProperty.Register(nameof(MinScale), typeof(double), typeof(NodeGraph), new FrameworkPropertyMetadata(0.1));
+
+    public ObservableCollection<int> Dots
+    {
+      get => (ObservableCollection<int>)GetValue(DotsProperty);
+      set => SetValue(DotsProperty, value);
+    }
+    public static readonly DependencyProperty DotsProperty=
+        DependencyProperty.Register(nameof(Dots), typeof(ObservableCollection<int>), typeof(NodeGraph), new FrameworkPropertyMetadata(new ObservableCollection<int>()));
 
     public double ScaleRate
     {
@@ -383,6 +392,14 @@ namespace NodeGraph.NET6.Controls
     static void AllowToOverrideConnectionPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
       NodeInputContent.AllowToOverrideConnection = (bool)e.NewValue;
+    }
+
+    public NodeGraph()
+    {
+      for (int i = 0; i < 10000; i++)
+      {
+        Dots.Add(i);
+      }
     }
 
     static NodeGraph()
@@ -1245,7 +1262,7 @@ namespace NodeGraph.NET6.Controls
         {
 
         }
-      
+
       }
 
 

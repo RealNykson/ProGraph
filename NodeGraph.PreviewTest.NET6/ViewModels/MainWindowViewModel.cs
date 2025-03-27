@@ -11,9 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using NodeGraph.NET6.Controls;
 
 namespace NodeGraph.PreviewTest.ViewModels
 {
+
   public enum GroupIntersectType
   {
     CursorPointVMDefine,
